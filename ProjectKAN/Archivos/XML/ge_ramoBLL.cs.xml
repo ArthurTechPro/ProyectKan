@@ -1,0 +1,95 @@
+<Formulario>
+  <Titulo>ge_ramo</Titulo>
+  <Archivo>ge_ramoBLL.cs.xml</Archivo>
+  <NombreClase>ge_ramo</NombreClase>
+  <NameProject>Winner</NameProject>
+  <NameSpace>Admin</NameSpace>
+  <NameSpaceProjet>BLL</NameSpaceProjet>
+  <ClaseDAO>ge_ramoDAO</ClaseDAO>
+  <ClaseDAL>ge_ramoDAL</ClaseDAL>
+  <ClaseBLL>ge_ramoBLL</ClaseBLL>
+  <DataProveedor>IBM.Data.Informix</DataProveedor>
+  <SqlConn>IfxConnection</SqlConn>
+  <SqlParam>IfxParameter</SqlParam>
+  <SqlDA>IfxDataAdapter</SqlDA>
+  <SqlComm>IfxCommand</SqlComm>
+  <SqlTrans>IfxTransaction</SqlTrans>
+  <DBPlataform>IFXSQL</DBPlataform>
+  <ConfigSetings>IFXSQLConnectionString</ConfigSetings>
+  <StringConn>Host=10.44.10.7;Service=1526;Server=produccion;Database=DBManik; Protocol=onsoctcp;UID=informix;Pass</StringConn>
+  <ConstanteTabla>GE_RAMO_TABLA</ConstanteTabla>
+  <PaginaListado>ge_ramoLista.aspx</PaginaListado>
+  <PaginaEdicion>ge_ramoAdm.aspx</PaginaEdicion>
+  <Acciones>
+    <Accion nombre="Nuevo" descripcion="Nuevo" />
+    <Accion nombre="Grabar" descripcion="Grabar" />
+    <Accion nombre="Eliminar" descripcion="Eliminar" />
+    <Accion nombre="EliminarOk" descripcion="Eliminar" />
+  </Acciones>
+  <Comandos>
+    <Comando>
+      <Nombre>Insert</Nombre>
+      <TipoComando>Execute</TipoComando>
+      <ComandoDataAdapter>InsertCommand</ComandoDataAdapter>
+      <TipoParametros>Dataset</TipoParametros>
+      <Sql>INSERT INTO ge_ramo (nombre_tipo_poliza, deducible_dev_, abrev_ramo, c_concaja, genera_cc) VALUES (?, ?, ?, ?, ?)</Sql>
+    </Comando>
+    <Comando>
+      <Nombre>SelectID</Nombre>
+      <TipoComando>Fill</TipoComando>
+      <ComandoDataAdapter>SelectCommand</ComandoDataAdapter>
+      <TipoParametros>CamposLlave</TipoParametros>
+      <Sql>SELECT id_ramo, nombre_tipo_poliza, deducible_dev_, abrev_ramo, c_concaja, genera_cc FROM ge_ramo WHERE id_ramo = ?</Sql>
+    </Comando>
+    <Comando>
+      <Nombre>SelectALL</Nombre>
+      <TipoComando>Fill</TipoComando>
+      <ComandoDataAdapter>SelectCommand</ComandoDataAdapter>
+      <TipoParametros>Ninguno</TipoParametros>
+      <Sql>SELECT id_ramo, nombre_tipo_poliza, deducible_dev_, abrev_ramo, c_concaja, genera_cc FROM ge_ramo</Sql>
+    </Comando>
+    <Comando>
+      <Nombre>Delete</Nombre>
+      <TipoComando>Execute</TipoComando>
+      <ComandoDataAdapter>DeleteCommand</ComandoDataAdapter>
+      <TipoParametros>CamposLlave</TipoParametros>
+      <Sql>DELETE FROM ge_ramo WHERE id_ramo = ?</Sql>
+    </Comando>
+    <Comando>
+      <Nombre>Update</Nombre>
+      <TipoComando>Update</TipoComando>
+      <ComandoDataAdapter>UpdateCommand</ComandoDataAdapter>
+      <TipoParametros>Dataset</TipoParametros>
+      <Sql>UPDATE ge_ramo SET nombre_tipo_poliza = ?, deducible_dev_ = ?, abrev_ramo = ?, c_concaja = ?, genera_cc = ? WHERE id_ramo = ?</Sql>
+    </Comando>
+    <Comando>
+      <Nombre>SelectRamo</Nombre>
+      <TipoComando>Fill</TipoComando>
+      <ComandoDataAdapter>SelectCommand</ComandoDataAdapter>
+      <TipoParametros>CamposAdd</TipoParametros>
+      <Sql>SELECT id_ramo, nombre_tipo_poliza, deducible_dev_, abrev_ramo, c_concaja, genera_cc  FROM ge_ramo WHERE id_ramo = ?</Sql>
+      <Parametros>
+        <Parametro>
+          <Nombre>id_ramo</Nombre>
+          <Tipodato>Int32</Tipodato>
+          <Tamano>4</Tamano>
+          <TipoDatoSql>IfxType.Serial</TipoDatoSql>
+          <ConstanteParam>ID_RAMO_PARAM</ConstanteParam>
+          <Direccion>ParameterDirection.Input</Direccion>
+        </Parametro>
+      </Parametros>
+    </Comando>
+  </Comandos>
+  <RelacionesHijos />
+  <Registro>
+    <Campos>
+      <Campo idpropcolumna="7" idpropiedad="4" nomcolumna="id_ramo" esprimarykey="1" grupo="0" descripcion="id_ramo" control="textbox" orden="1" tipodato="Int32" tipodatosql="IfxType.Serial" oculto="0" requerido="0" esidentity="1" formulario="0" listado="0" tamano="4" bloquedado="0" ConstanteCampo="ID_RAMO_CAMPO" ConstanteParametro="ID_RAMO_PARAM" />
+      <Campo idpropcolumna="8" idpropiedad="4" nomcolumna="nombre_tipo_poliza" esprimarykey="0" grupo="0" descripcion="nombre_tipo_poliza" control="textbox" orden="2" tipodato="String" tipodatosql="IfxType.VarChar" oculto="1" requerido="1" esidentity="0" formulario="0" listado="0" tamano="50" bloquedado="1" ConstanteCampo="NOMBRE_TIPO_POLIZA_CAMPO" ConstanteParametro="NOMBRE_TIPO_POLIZA_PARAM" />
+      <Campo idpropcolumna="9" idpropiedad="4" nomcolumna="deducible_dev_" esprimarykey="0" grupo="0" descripcion="deducible_dev_" control="textbox" orden="3" tipodato="Int32" tipodatosql="IfxType.Integer" oculto="1" requerido="1" esidentity="0" formulario="0" listado="0" tamano="4" bloquedado="1" ConstanteCampo="DEDUCIBLE_DEV__CAMPO" ConstanteParametro="DEDUCIBLE_DEV__PARAM" />
+      <Campo idpropcolumna="10" idpropiedad="4" nomcolumna="abrev_ramo" esprimarykey="0" grupo="0" descripcion="abrev_ramo" control="textbox" orden="4" tipodato="String" tipodatosql="IfxType.VarChar" oculto="1" requerido="1" esidentity="0" formulario="0" listado="0" tamano="3" bloquedado="1" ConstanteCampo="ABREV_RAMO_CAMPO" ConstanteParametro="ABREV_RAMO_PARAM" />
+      <Campo idpropcolumna="11" idpropiedad="4" nomcolumna="c_concaja" esprimarykey="0" grupo="0" descripcion="c_concaja" control="textbox" orden="5" tipodato="Int16" tipodatosql="IfxType.SmallInt" oculto="1" requerido="1" esidentity="0" formulario="0" listado="0" tamano="2" bloquedado="1" ConstanteCampo="C_CONCAJA_CAMPO" ConstanteParametro="C_CONCAJA_PARAM" />
+      <Campo idpropcolumna="12" idpropiedad="4" nomcolumna="genera_cc" esprimarykey="0" grupo="0" descripcion="genera_cc" control="textbox" orden="6" tipodato="Int16" tipodatosql="IfxType.SmallInt" oculto="1" requerido="1" esidentity="0" formulario="0" listado="0" tamano="2" bloquedado="1" ConstanteCampo="GENERA_CC_CAMPO" ConstanteParametro="GENERA_CC_PARAM" />
+    </Campos>
+  </Registro>
+  <Parametros />
+</Formulario>
